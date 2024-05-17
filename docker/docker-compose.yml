@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  kaya_proposal:
+    image: kaya_proposal:latest
+    container_name: kaya_proposal
+    tty: true
+    build:
+      context: ../../
+      dockerfile: docker/Dockerfile/ray.Dockerfile
+#    volumes:
+#      - ./app:/srv/invoice
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
